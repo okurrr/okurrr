@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  background-color: orange;
 }
 
 a {
@@ -19,3 +20,21 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+.container {
+  position: relative;
+}
+
+.container {
+  position: relative;
+  background-image: url("fire.jpg");
+  opacity: 0.85;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+

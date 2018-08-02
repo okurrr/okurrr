@@ -1,18 +1,91 @@
 'use strict'
 
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const {User, Word, Vote} = require('../server/db/models')
+
+const users = [
+  {
+    name: 'Cody',
+    email: 'cody@email.com',
+    password: '123',
+    salt: 'sithlord',
+    admin: true
+  },
+  {
+    name: 'Murphy',
+    email: 'murphy@email.com',
+    password: '123',
+    salt: 'jedi'
+  }
+]
+
+const words = [
+  {
+    name: 'finna',
+    description: 'about to'
+  },
+  {
+    name: 'gucci',
+    description: 'good'
+  },
+  {
+    name: 'okurr',
+    description: 'from ok to yes'
+  },
+  {
+    name: 'yass',
+    description: 'good'
+  },
+  {
+    name: 'banger',
+    description: 'good'
+  },
+  {
+    name: 'fetch',
+    description: 'good'
+  },
+  {
+    name: 'GOAT',
+    description: 'greatest of all time'
+  },
+  {
+    name: 'keke',
+    description: 'greatest of all time'
+  },
+  {
+    name: 'woke',
+    description: 'greatest of all time'
+  }
+]
+
+const votes = [
+  {
+    word: 'finna',
+    value: 1
+  },
+  {
+    word: 'gucci',
+    value: 1
+  },
+  {
+    word: 'finna',
+    value: 0
+  }
+]
 
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
 
-  const users = await Promise.all([
-    User.create({email: 'cody@email.com', password: '123'}),
-    User.create({email: 'murphy@email.com', password: '123'})
-  ])
+  const usersSeed = await Promise.all(users.map(user => User.create(user)))
+
+  const wordsSeed = await Promise.all(words.map(word => Word.create(word)))
+
+  const votesSeed = await Promise.all(votes.map(vote => Vote.create(vote)))
 
   console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${words.length} words`)
+  console.log(`seeded ${votes.length} votes`)
   console.log(`seeded successfully`)
 }
 

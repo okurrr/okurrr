@@ -3,44 +3,43 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {auth} from '../store'
 
-/**
- * COMPONENT
- */
 const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
-
+  console.log('auth-form', props)
   return (
     <div>
-      <form onSubmit={handleSubmit} name={name}>
-        <div>
-          <label htmlFor="email">
-            <small>Email</small>
-          </label>
+      {displayName === 'Sign Up' ? <h2>Sign Up</h2> : <h2>Log In</h2>}
+      <form onSubmit={handleSubmit} name={name} className="ui form">
+        {displayName === 'Sign Up' ? (
+          <div className="field six wide">
+            <label htmlFor="userName">Name</label>
+            <input name="userName" type="text" />
+          </div>
+        ) : (
+          <div />
+        )}
+        <br />
+        <div className="field six wide">
+          <label htmlFor="email">Email</label>
           <input name="email" type="text" />
         </div>
-        <div>
-          <label htmlFor="password">
-            <small>Password</small>
-          </label>
+        <br />
+        <div className="field six wide">
+          <label htmlFor="password">Password</label>
           <input name="password" type="password" />
         </div>
-        <div>
-          <button type="submit">{displayName}</button>
-        </div>
+        <br />
+        <button className="ui button" type="submit">
+          {displayName}
+        </button>
+
         {error && error.response && <div> {error.response.data} </div>}
       </form>
-      <a href="/auth/google">{displayName} with Google</a>
+      {/* <a href="/auth/google">{displayName} with Google</a> */}
     </div>
   )
 }
 
-/**
- * CONTAINER
- *   Note that we have two different sets of 'mapStateToProps' functions -
- *   one for Login, and one for Signup. However, they share the same 'mapDispatchToProps'
- *   function, and share the same Component. This is a good example of how we
- *   can stay DRY with interfaces that are very similar to each other!
- */
 const mapLogin = state => {
   return {
     name: 'login',
@@ -64,7 +63,12 @@ const mapDispatch = dispatch => {
       const formName = evt.target.name
       const email = evt.target.email.value
       const password = evt.target.password.value
-      dispatch(auth(email, password, formName))
+      if (formName === 'signup') {
+        const userName = evt.target.userName.value
+        dispatch(auth(email, password, formName, userName))
+      } else {
+        dispatch(auth(email, password, formName))
+      }
     }
   }
 }
