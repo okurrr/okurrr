@@ -9,7 +9,6 @@ const getWords = words => ({type: GET_WORDS, words})
 export const fetchWords = () => async dispatch => {
   try {
     const res = await axios.get(`api/words`)
-    console.log(res)
     dispatch(getWords(res.data))
   } catch (error) {
     console.error(error)

@@ -20,7 +20,7 @@ class Routes extends Component {
       <div className="ui container">
         <Switch>
           <Route exact path="/login" component={Login} />
-          {/* <Route exact path="/twitter" component={Twitter} /> */}
+          <Route exact path="/twitter" component={Twitter} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/list" component={List} />
           {isLoggedIn && (
