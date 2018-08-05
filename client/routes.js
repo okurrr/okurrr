@@ -23,7 +23,6 @@ class Routes extends Component {
       <div className="ui fluid container">
         <Switch>
           <Redirect exact from="/" to="/home" />
-          <Route exact path="/navbar" component={Navbar} />
           <Route exact path="/twitter" component={Twitter} />
           <Route exact path="/list" component={List} />
           <Route path="/list/:word" component={Word} />

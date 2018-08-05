@@ -10,7 +10,7 @@ const TwitterSection = props => {
       </h2>
       <br />
       {tweets.length ? (
-        <div className="ui five column grid">
+        <div className="ui three column grid">
           {tweets.map(tweet => {
             return (
               <div key={tweet.time} className="column">

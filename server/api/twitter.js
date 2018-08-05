@@ -64,7 +64,7 @@ router.get('/:word', async (req, res, next) => {
   try {
     const params = {
       q: search,
-      count: 10,
+      count: 9,
       lang: 'en',
       result_type: 'popular'
     }

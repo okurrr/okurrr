@@ -5,6 +5,7 @@ import {fetchSongs} from '../store/genius'
 import {connect} from 'react-redux'
 import TwitterSection from './twitterSection'
 import SongSection from './songSection'
+import List from './list'
 import {withRouter} from 'react-router-dom'
 
 class Word extends Component {
@@ -31,18 +32,25 @@ class Word extends Component {
     const songs = this.props.songs
 
     return (
-      <div className="ui grid">
-        {/* <div className="row" /> */}
-        <div className="sixteen wide column" id="page">
-          <div className="eight wide column">
-            <span className="wordPage">{word.name} </span>
-            <span className="wordPageDef"> {word.description} </span>
-          </div>
+      <div className="ui grid parent">
+        <div className="seven wide column scroll">
+          <List />
         </div>
 
-        <TwitterSection tweets={tweets} />
-        {/* <div className="row" /> */}
-        <SongSection songs={songs} />
+        <div className="nine wide column scroll">
+          <div className="ui grid">
+            <div id="page">
+              <span className="wordPage">{word.name} </span>
+              <span className="wordPageDef"> {word.description} </span>
+            </div>
+          </div>
+          <div className="ui grid">
+            <TwitterSection tweets={tweets} />
+          </div>
+          <div className="ui grid">
+            <SongSection songs={songs} />
+          </div>
+        </div>
       </div>
     )
   }

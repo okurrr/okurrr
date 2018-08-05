@@ -16,10 +16,21 @@ class List extends Component {
         <div className="row" id="list">
           {this.props.list.words.map(word => {
             return (
-              <span className="listPage " key={word.id}>
-                <Link to={`/list/${word.name}`}>
+              <span
+                className="listPage "
+                key={word.id}
+                style={{
+                  fontSize: '2.5em',
+                  fontWeight: 'bold'
+                }}
+              >
+                <Link
+                  to={`/list/${word.name}`}
+                  // style={{color: '#FFFFFF'}}
+                  className="listWord"
+                >
                   {word.name}
-                  <Emoji text={this.props.getEmoji(word)} />
+                  {/* <Emoji text={this.props.getEmoji(word)} /> */}
                 </Link>
               </span>
             )

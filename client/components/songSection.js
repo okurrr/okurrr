@@ -18,7 +18,7 @@ const SongSection = props => {
                   <a className=" image" href={song.result.url} target="_blank">
                     <img src={song.result.header_image_url} />
                   </a>
-                  <div className=" description middle aligned content innerTweet">
+                  <div className=" description content innerTweet">
                     {song.result.full_title}
                   </div>
                 </div>

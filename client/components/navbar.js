@@ -11,7 +11,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div className="ui active inverted secondary menu" id="fade">
+      <div className="ui active inverted secondary menu" id="navbar">
         <div className="item">
           <Link className="item" to="/home">
             <h1 className="ui inverted header">okurrr.</h1>
