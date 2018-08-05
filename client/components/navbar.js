@@ -1,45 +1,50 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {fetchWords} from '../store/list'
+import SearchBar from './searchBar'
 import {Link} from 'react-router-dom'
 
-const Navbar = () => (
-  <div className="ui active inverted secondary menu" id="fade">
-    <div className="item">
-      <Link className="item" to="/home">
-        <h1 className="ui inverted header">okurrr.</h1>
-      </Link>
-    </div>
-    <div className="right menu">
-      <nav>
+class Navbar extends Component {
+  componentDidMount() {
+    this.props.getWords()
+  }
+
+  render() {
+    return (
+      <div className="ui active inverted secondary menu" id="fade">
         <div className="item">
-          <Link className="item midsize" to="/list">
-            see all
-          </Link>
-          <Link className="item midsize" to="/add">
-            define a word
+          <Link className="item" to="/home">
+            <h1 className="ui inverted header">okurrr.</h1>
           </Link>
         </div>
-      </nav>
-      <hr />
-    </div>
-  </div>
-)
+        <div className="right menu">
+          <nav>
+            <div className="item">
+              <SearchBar navbar={this.props} />
+              <Link className="item midsize" to="/list">
+                see all
+              </Link>
+              <Link className="item midsize" to="/add">
+                define a word
+              </Link>
+            </div>
+          </nav>
+          <hr />
+        </div>
+      </div>
+    )
+  }
+}
 
-/**
- * CONTAINER
- */
-// const mapState = state => {
-//   return {
-//     isLoggedIn: !!state.user.id
-//   }
-// }
+const mapStateToProps = state => {
+  return {
+    list: state.list,
+    search: state.search
+  }
+}
 
-// const mapDispatch = dispatch => {
-//   return {
-//     handleClick() {
-//       dispatch(logout())
-//     }
-//   }
-// }
+const mapDispatchToProps = dispatch => ({
+  getWords: () => dispatch(fetchWords())
+})
 
-export default connect(null)(Navbar)
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)

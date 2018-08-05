@@ -39,7 +39,7 @@ const words = [
   {
     name: 'collusion',
     description:
-      "when you meet with Russian officials to plot a mission to interfere with the U.S democratic election and you know that it's wrong so you lie about it ever happening."
+      'when you meet with Russian officials to interfere with the US election and lie about it.'
   },
   {name: 'absolute unit', description: 'Someone THICC and BIGG.'},
   {
@@ -54,8 +54,7 @@ const words = [
   {name: 'facts', description: 'True, right, or correct.'},
   {
     name: 'l',
-    description:
-      'Catching an L means catching a loss. In this sense, you catch an L if you say something stupid or, if you try to sound intelligent but are proved wrong.'
+    description: 'Catching an L means catching a loss.'
   },
   {
     name: 'this is so sad Alexa play despacito',
@@ -65,7 +64,7 @@ const words = [
   {
     name: 'for reasons',
     description:
-      "Used as an explanation as to why you are requesting something when you don't want the people to know why. The more sinister your statement sounds in context, the better."
+      "Used to explain a request when you don't want the people to know why."
   },
   {
     name: 'jocking',
@@ -116,15 +115,15 @@ const words = [
   },
   {
     name: 'yass',
-    description: 'yes but with more enthusiam."'
+    description: 'yes but with more enthusiam.'
   },
   {
     name: 'lowkey',
-    description: 'to keep something confidential between friends."'
+    description: 'to keep something confidential between friends.'
   },
   {
     name: 'thirsty',
-    description: 'desparate, impatient, or overly eager."'
+    description: 'desparate, impatient, or overly eager.'
   },
   {
     name: 'thirst trap',

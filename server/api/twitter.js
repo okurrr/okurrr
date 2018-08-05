@@ -66,7 +66,7 @@ router.get('/:word', async (req, res, next) => {
       q: search,
       count: 10,
       lang: 'en',
-      result_type: 'mixed'
+      result_type: 'popular'
     }
     T.get('search/tweets', params, function gotData(err, data, response) {
       const tweetsArr = []

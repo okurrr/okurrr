@@ -13,8 +13,8 @@ const TwitterSection = props => {
         <div className="ui five column grid">
           {tweets.map(tweet => {
             return (
-              <div key={tweet.name} className="column">
-                <div className="ui fluid card" style={{height: '200px'}}>
+              <div key={tweet.time} className="column">
+                <div className="ui fluid card" style={{height: '240px'}}>
                   <div className="content">
                     <div className="header">
                       <i className="twitter square icon innerTweet" />

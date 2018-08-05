@@ -5,6 +5,7 @@ import {fetchSongs} from '../store/genius'
 import {connect} from 'react-redux'
 import TwitterSection from './twitterSection'
 import SongSection from './songSection'
+import {withRouter} from 'react-router-dom'
 
 class Word extends Component {
   componentDidMount() {
@@ -12,6 +13,16 @@ class Word extends Component {
     this.props.getTweets(word)
     this.props.getWord(word)
     this.props.getSongs(word)
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.url !== this.props.match.url) {
+      const word = this.props.match.url.slice(6)
+
+      this.props.getTweets(word)
+      this.props.getWord(word)
+      this.props.getSongs(word)
+    }
   }
 
   render() {
@@ -28,9 +39,9 @@ class Word extends Component {
             <span className="wordPageDef"> {word.description} </span>
           </div>
         </div>
-        <div className="row" />
+
         <TwitterSection tweets={tweets} />
-        <div className="row" />
+        {/* <div className="row" /> */}
         <SongSection songs={songs} />
       </div>
     )
@@ -52,4 +63,4 @@ const mapDispatchToProps = dispatch => ({
   getSongs: word => dispatch(fetchSongs(word))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Word)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Word))

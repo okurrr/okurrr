@@ -18,9 +18,9 @@ export const Home = props => {
           dictionary x culture x data
         </div>
       </div>
-      <div className="row" />
-      <div className="twitter">
-        <h3>Word of the day</h3>
+      {/* <div className="row" /> */}
+      <div className="row" id="homebase">
+        <span className=""> Top Trending Words </span>
       </div>
     </div>
   )

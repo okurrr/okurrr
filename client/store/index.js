@@ -5,11 +5,13 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import list from './list'
 import twitter from './twitter'
 import genius from './genius'
+import search from './search'
 
 const reducer = combineReducers({
   list,
   twitter,
-  genius
+  genius,
+  search
 })
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
@@ -17,4 +19,3 @@ const middleware = composeWithDevTools(
 const store = createStore(reducer, middleware)
 
 export default store
-export * from './list'

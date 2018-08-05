@@ -13,12 +13,11 @@ class List extends Component {
   render() {
     return (
       <div className="ui grid">
-        {/* <div className="row" /> */}
-        <div className="five column row" id="list">
+        <div className="row" id="list">
           {this.props.list.words.map(word => {
             return (
-              <span className="listPage column " key={word.id}>
-                <Link to={`/list/${word.name}`} style={{color: '#FFFF00'}}>
+              <span className="listPage " key={word.id}>
+                <Link to={`/list/${word.name}`}>
                   {word.name}
                   <Emoji text={this.props.getEmoji(word)} />
                 </Link>
