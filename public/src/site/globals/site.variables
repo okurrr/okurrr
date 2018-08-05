@@ -1,6 +1,11 @@
 /*******************************
      User Global Variables
 *******************************/
-@headerFont        : 'Oswald', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-@pageFont          : 'Oswald', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-@googleFontFamily  : 'Open+Sans:400italic,400|Oswald:400,700';
+@headerFont        : 'Magra', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont          : 'Magra', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@fontSmoothing     : antialiased;
+
+@importGoogleFonts : true;
+@googleFontName    : 'Magra';
+@googleFontSizes   : '400,700,400italic,700italic';
+@googleFontFamily  : '@{googleFontName}:@{googleFontSizes}';

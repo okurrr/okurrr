@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
-  background-color: orange;
+  background-color: black;
+  vertical-align: top;
 }
 
 a {
@@ -21,20 +22,161 @@ form div {
   display: inline-block;
 }
 
-.container {
-  position: relative;
+.menu{
+  padding: 0px;
+  margin: 0px;
 }
-
+.midsize{
+  font-size: 1.5em;
+  color: white;
+}
+/* semantic */
 .container {
   position: relative;
-  background-image: url("fire.jpg");
-  opacity: 0.85;
+  background-color: white;
+  /* background-image: url("bg.jpg"); */
+  height: 1600px;
+  width: 100%;
+  padding-left: 10px;
+  margin: 10px;
+  color: black
+
 }
 
 .centered {
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+h2.centeredtop {
+  text-align: center;
+}
+
+/* self */
+#fade{
+  background-color: teal
+   /* background-image: url("header.jpg"); */
+}
+
+#home{
+  background-color: black;
+   /* background-image: url("header.jpg"); */
+   color: white;
+   text-align: center;
+   justify-content: center;
+   font-size: 10em;
+   height: 3.25em;
+   line-height: 165px;
+   padding: 110px;
+}
+
+#add{
+  background-color: black;
+   color: white;
+   font-size: 2em;
+   height: 2.5em;
+   line-height: 20px;
+   padding: 30px;
+}
+
+.homespace{
+  background-color: white;
+   font-size: 7em;
+   height: .5em;
+}
+
+.twitter {
+  background-color: black;
+  color: white;
+  padding: 15px 15px 15px 15px;
+  width: 100%;
+  height: 100%
+}
+
+.albums {
+  background-color: black;
+  color: white;
+  padding: 15px 15px 15px 15px;
+  width: 100%;
+  height: 100%
+}
+
+.innerTweet {
+  color: black;
+  background-color: white;
+
+}
+
+
+div span.homePage {
+  border: 15px solid white;
+  width:43%;
+  padding: 5px;
+  color: yellow
+}
+
+
+#page{
+  background-color: black;
+   color: white;
+   /* text-align: center; */
+   justify-content: center;
+   font-size: 2.5em;
+   height: 3em;
+   line-height: 58px;
+   padding: 25px;
+}
+
+
+#list{
+  background-color: black;
+   color: white;
+   text-align: center;
+   justify-content: left;
+   font-size: 2em;
+   line-height: 75px;
+   padding: 75px;
+   padding-bottom: 750px;
+   /* height: 2000px; */
+}
+
+div span.listPage {
+  border: 5px solid white;
+  padding: 5px;
+  color: yellow;
+  /* height: 50%; */
+}
+
+div span.wordPage {
+  border: 7px solid white;
+  padding: 10px;
+  color: yellow
+}
+
+div span.wordPageDef {
+color: white;
+padding: 15px;
+font-size: .75em;
+}
+
+form{
+  background-color: black;
+   color: white;
+   font-size: 5em;
+   height: 250em;
+   line-height: 20px;
+   padding: 60px;
+   width: 100%;
+
+}
+
+label {
+  font-size: 2em;
+  line-height: 30px;
+  padding: 15px;
+}
+
+
 

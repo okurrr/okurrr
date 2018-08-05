@@ -6,10 +6,9 @@ const GET_TWEETS = 'GET_TWEETS'
 
 const getTweets = tweets => ({type: GET_TWEETS, tweets})
 
-export const fetchTweets = () => async dispatch => {
+export const fetchTweets = word => async dispatch => {
   try {
-    const res = await axios.get('/api/twitter')
-    console.log('fetchtweets', res.data)
+    const res = await axios.get(`/api/twitter/${word}`)
     dispatch(getTweets(res.data))
   } catch (error) {
     console.error(error)

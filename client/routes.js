@@ -1,34 +1,25 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {withRouter, Route, Switch} from 'react-router-dom'
-import PropTypes from 'prop-types'
-import {Login, Signup, UserHome, List, Twitter} from './components'
-import {me} from './store'
+import {withRouter, Route, Switch, Redirect} from 'react-router-dom'
+import {Home, List, Twitter, Word, CreateWord} from './components'
 
 /**
  * COMPONENT
  */
 class Routes extends Component {
   componentDidMount() {
-    this.props.loadInitialData()
+    // this.props.loadInitialData()
   }
 
   render() {
-    const {isLoggedIn} = this.props
-
     return (
-      <div className="ui container">
+      <div className="ui fluid container">
         <Switch>
-          <Route exact path="/login" component={Login} />
+          <Redirect exact from="/" to="/home" />
           <Route exact path="/twitter" component={Twitter} />
-          <Route exact path="/signup" component={Signup} />
           <Route exact path="/list" component={List} />
-          {isLoggedIn && (
-            <Switch>
-              <Route path="/home" component={UserHome} />
-            </Switch>
-          )}
-          <Route component={Login} />
+          <Route path="/list/:word" component={Word} />
+          <Route exact path="/add" component={CreateWord} />
+          <Route exact path="/home" component={Home} />
         </Switch>
       </div>
     )
@@ -38,28 +29,21 @@ class Routes extends Component {
 /**
  * CONTAINER
  */
-const mapState = state => {
-  return {
-    isLoggedIn: !!state.user.id
-  }
-}
+// const mapState = state => {
+//   return {
+//     isLoggedIn: !!state.user.id
+//   }
+// }
 
-const mapDispatch = dispatch => {
-  return {
-    loadInitialData() {
-      dispatch(me())
-    }
-  }
-}
+// const mapDispatch = dispatch => {
+//   return {
+//     loadInitialData() {
+//       dispatch(me())
+//     }
+//   }
+// }
 
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
-export default withRouter(connect(mapState, mapDispatch)(Routes))
-
-/**
- * PROP TYPES
- */
-Routes.propTypes = {
-  loadInitialData: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired
-}
+// export default withRouter(connect(mapState, mapDispatch)(Routes))
+export default Routes

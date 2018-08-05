@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import {fetchWords} from '../store/list'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import Emoji from 'react-emoji-render'
 
 class List extends Component {
   componentDidMount() {
@@ -11,10 +12,20 @@ class List extends Component {
 
   render() {
     return (
-      <div>
-        {this.props.list.map(word => {
-          return <div key={word.id}>{word.name}</div>
-        })}
+      <div className="ui grid">
+        {/* <div className="row" /> */}
+        <div className="five column row" id="list">
+          {this.props.list.words.map(word => {
+            return (
+              <span className="listPage column " key={word.id}>
+                <Link to={`/list/${word.name}`} style={{color: '#FFFF00'}}>
+                  {word.name}
+                  <Emoji text={this.props.getEmoji(word)} />
+                </Link>
+              </span>
+            )
+          })}
+        </div>
       </div>
     )
   }
@@ -25,7 +36,47 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  getWords: () => dispatch(fetchWords())
+  getWords: () => dispatch(fetchWords()),
+  getEmoji: word => {
+    let emojii = ''
+    if (word.name === 'fire') {
+      emojii = '🔥'
+    }
+    if (word.name === 'lit') {
+      emojii = '🔥'
+    }
+    if (word.name === 'goat') {
+      emojii = '🐐'
+    }
+    if (word.name === 'bless up') {
+      emojii = '🙏'
+    }
+    if (word.name === 'bye felicia') {
+      emojii = '👋'
+    }
+    if (word.name === 'fetch') {
+      emojii = '🐶'
+    }
+    if (word.name === 'thicc') {
+      emojii = '🍑'
+    }
+    if (word.name === 'one hunnid') {
+      emojii = '💯'
+    }
+    if (word.name === 'clapback') {
+      emojii = '👏'
+    }
+    if (word.name === 'hot minute') {
+      emojii = '🕒'
+    }
+    if (word.name === 'yass') {
+      emojii = '🙌'
+    }
+    if (word.name === 'thirst trap') {
+      emojii = '🤤'
+    }
+    return emojii
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(List)
