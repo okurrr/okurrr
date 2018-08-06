@@ -4,19 +4,19 @@ import {expect} from 'chai'
 import React from 'react'
 import enzyme, {shallow} from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import {Home} from './home'
+import {NavBar} from './navbar'
 
 const adapter = new Adapter()
 enzyme.configure({adapter})
 
-describe('Home', () => {
-  let home
+describe('Navbar', () => {
+  let navbar
 
   beforeEach(() => {
-    home = shallow(<Home email="cody@email.com" />)
+    navbar = shallow(<Navbar email="cody@email.com" />)
   })
 
   it('renders the email in an h3', () => {
-    expect(home.find('span').text()).to.be.equal('top trending words')
+    expect(navbar.find('h1').text()).to.be.equal('okurrr.')
   })
 })

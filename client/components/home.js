@@ -13,7 +13,7 @@ export const Home = props => {
         <div
           style={{
             display: 'flex',
-            fontSize: '38px',
+            fontSize: '30px',
             width: '100%',
             justifyContent: 'center'
           }}
