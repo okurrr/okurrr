@@ -4,19 +4,19 @@ import {expect} from 'chai'
 import React from 'react'
 import enzyme, {shallow} from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import {CreateWord} from './createWord'
+import {TwitterSection} from './createWord'
 
 const adapter = new Adapter()
 enzyme.configure({adapter})
 
-describe('CreateWord', () => {
+describe('TwitterSection', () => {
   let createWord
 
   beforeEach(() => {
-    createWord = shallow(<CreateWord email="cody@email.com" />)
+    createWord = shallow(<TwitterSection email="cody@email.com" />)
   })
 
-  it('renders the email in an h3', () => {
-    expect(createWord.find('div').text()).to.be.equal('Add your word below:')
+  it('renders the title in an h2', () => {
+    expect(createWord.find('h2').text()).to.be.equal('Recent Twitter Usage')
   })
 })
