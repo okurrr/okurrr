@@ -29,6 +29,7 @@ class WordForm extends Component {
           onChange={this.handleChange}
           value={this.state.name}
           style={{width: '500px'}}
+          required
         />
 
         <label htmlFor="description">Definition:</label>
@@ -38,6 +39,7 @@ class WordForm extends Component {
           onChange={this.handleChange}
           value={this.state.description}
           rows="3"
+          required
           style={{width: '500px'}}
         />
         <br />
