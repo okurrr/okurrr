@@ -68,9 +68,10 @@ h2.centeredtop {
    text-align: center;
    justify-content: center;
    font-size: 10em;
-   height: 3.25em;
+   height: 3.75em;
    line-height: 165px;
    padding: 110px;
+   padding-block-end: 210px;
 
    /* height: 100%;
    background: linear-gradient(90deg, #1F2833 50%, #1F2833 50%); */
@@ -83,11 +84,11 @@ h2.centeredtop {
   background-color: #1F2833;;
    /* background-image: url("header.jpg"); */
    color: white;
-   text-align: center;
+
    justify-content: center;
    font-size: 45px;
-   height: 15em;
-   line-height: 165px;
+   height: 5em;
+   line-height: 130px;
    padding: 7px;
    /* background: linear-gradient(90deg, #1F2833 50%, #1F2833 50%);
    background: linear-gradient(to right, #1F2833 , #A16E83 ); */
@@ -159,8 +160,8 @@ h2.centeredtop {
 
 
 div span.homePage {
-  border: 15px solid white;
-  width:43%;
+  border: 12px solid white;
+  width:40%;
   padding: 5px;
   color: yellow;
   /* width: 100wh;
@@ -206,6 +207,7 @@ div span.notFoundPage {
    width: 100%;
    height: 100%;
    overflow: hidden;
+   /* background: linear-gradient(90deg, #1F2833 43.75%, #A16E83 56.25%); */
 }
 
 div span.listPage {

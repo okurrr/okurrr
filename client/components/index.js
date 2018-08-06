@@ -6,7 +6,7 @@
 export {default as Navbar} from './navbar'
 export {default as List} from './list'
 export {default as Word} from './word'
-export {default as Twitter} from './twitter'
+export {default as TwitterGraph} from './twitterGraph'
 export {default as Home} from './home'
 export {default as TwitterSection} from './twitterSection'
 export {default as SongSection} from './songSection'

@@ -4,29 +4,29 @@ const config = require('./twitterConfig')
 
 const T = new Twit(config)
 
-// const params = {
-//   q: 'finna',
-//   count: 1,
-//   lang: 'en',
-//   result_type: 'mixed'
-// }
+const params = {
+  q: 'finna',
+  count: 10,
+  lang: 'en',
+  result_type: 'mixed'
+}
 
-// function gotData(err, data, response) {
-//   const tweetsArr = []
-//   if (err) {
-//     console.log(err)
-//   }
-//   const tweets = data.statuses
-//   console.log(tweets)
-//   for (let i = 0; i < tweets.length; i++) {
-//     console.log(tweets[i].text)
-//     tweetsArr.push(tweets[i])
-//   }
-//   console.log(tweetsArr)
-//   return tweetsArr
-// }
+function gotData(err, data, response) {
+  const tweetsArr = []
+  if (err) {
+    console.log(err)
+  }
+  const tweets = data.statuses
+  // console.log(tweets)
+  for (let i = 0; i < tweets.length; i++) {
+    console.log(tweets[i].created_at)
+    tweetsArr.push(tweets[i])
+  }
+  console.log(tweetsArr)
+  return tweetsArr
+}
 
-// T.get('search/tweets', params, gotData)
+T.get('search/tweets', params, gotData)
 
 router.get('/', async (req, res, next) => {
   try {
@@ -64,7 +64,7 @@ router.get('/:word', async (req, res, next) => {
   try {
     const params = {
       q: search,
-      count: 9,
+      count: 100,
       lang: 'en',
       result_type: 'popular'
     }

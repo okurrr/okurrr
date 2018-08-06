@@ -72,9 +72,8 @@ const words = [
       "1. copying or stealing someone's style. 2. or flirting with someone."
   },
   {
-    name: 'bey-sexual',
-    description:
-      'A person who is not sexually attracted to women, but would have sex with Beyoncé.'
+    name: 'shook',
+    description: "shocked or surprised. Can't believe what you're seeing."
   },
   {name: 'lit', description: 'When something is turned up or popping.'},
   {name: 'fire', description: 'really good, cool as hell.'},

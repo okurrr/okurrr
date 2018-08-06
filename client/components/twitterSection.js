@@ -1,7 +1,9 @@
 import React from 'react'
+import TwitterGraph from './twitterGraph'
 
 const TwitterSection = props => {
-  const tweets = props.tweets
+  const allTweets = props.tweets
+  const tweets = allTweets.slice(0, 9)
 
   return (
     <div className="twitter" style={{padding: '25px'}}>
@@ -38,6 +40,9 @@ const TwitterSection = props => {
           No recent tweets.
         </div>
       )}
+      <div>
+        <TwitterGraph tweets={props} />
+      </div>
     </div>
   )
 }
