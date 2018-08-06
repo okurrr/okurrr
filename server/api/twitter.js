@@ -4,6 +4,16 @@ const config = require('./twitterConfig')
 
 const T = new Twit(config)
 
+// try {
+//   var SpeechRecognition =
+//     window.SpeechRecognition || window.webkitSpeechRecognition
+//   var recognition = new SpeechRecognition()
+// } catch (e) {
+//   console.error(e)
+//   $('.no-browser-support').show()
+//   $('.app').hide()
+// }
+
 // const params = {
 //   q: 'finna',
 //   count: 10,

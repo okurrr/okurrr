@@ -18,7 +18,7 @@ const words = [
   {
     name: 'fetch',
     description:
-      'The word that really hot girl from Mean Girls was trying to make slang for cool, awesome, or good.'
+      'The word that girl from Mean Girls was trying to make slang for cool, awesome, or good.'
   },
   {
     name: 'bye felicia',
@@ -39,9 +39,12 @@ const words = [
   {
     name: 'collusion',
     description:
-      'when you meet with Russian officials to interfere with the US election and lie about it.'
+      'When you meet with Russian officials to interfere with the US election and lie about it.'
   },
-  {name: 'absolute unit', description: 'Someone THICC and BIGG.'},
+  {
+    name: 'absolute unit',
+    description: 'something or someone that is comically oversize.'
+  },
   {
     name: 'thicc',
     description:
@@ -57,7 +60,7 @@ const words = [
     description: 'Catching an L means catching a loss.'
   },
   {
-    name: 'this is so sad Alexa play despacito',
+    name: 'this is so sad. Alexa, play despacito.',
     description:
       'The sudden response to something sad happening and a need for bieber.'
   },
@@ -73,10 +76,10 @@ const words = [
   },
   {
     name: 'shook',
-    description: "shocked or surprised. Can't believe what you're seeing."
+    description: "Shocked or surprised. Can't believe what you're seeing."
   },
   {name: 'lit', description: 'When something is turned up or popping.'},
-  {name: 'fire', description: 'really good, cool as hell.'},
+  {name: 'fire', description: 'Really good, cool as hell.'},
   {name: 'werk', description: 'A congratulatory exclamation of approval.'},
   {
     name: 'hot minute',
@@ -91,7 +94,7 @@ const words = [
     description: 'Word has been used to describe how good something is.'
   },
   {name: 'clapback', description: 'To return a diss'},
-  {name: 'hey yo sis', description: 'salutations to a sister/friend.'},
+  {name: 'hey yo sis', description: 'Salutations to a sister/friend.'},
   {
     name: 'trippin',
     description:
@@ -114,19 +117,19 @@ const words = [
   },
   {
     name: 'yass',
-    description: 'yes but with more enthusiam.'
+    description: 'Yes but with more enthusiam.'
   },
   {
     name: 'lowkey',
-    description: 'to keep something confidential between friends.'
+    description: 'To keep something confidential between friends.'
   },
   {
     name: 'thirsty',
-    description: 'desparate, impatient, or overly eager.'
+    description: 'Desparate, impatient, or overly eager.'
   },
   {
     name: 'thirst trap',
-    description: 'a sexy photo posted on social media to attract attention.'
+    description: 'A sexy photo posted on social media to attract attention.'
   }
 ]
 
