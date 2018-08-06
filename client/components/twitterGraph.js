@@ -23,28 +23,57 @@ const TwitterGraph = props => {
         lineTension: 0.1,
         backgroundColor: 'white',
         borderColor: 'white',
-        borderCapStyle: 'butt',
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: 'miter',
-        pointBorderColor: 'black',
-        pointBackgroundColor: 'black',
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: 'black',
-        pointHoverBorderColor: 'black',
-        pointHoverBorderWidth: 2,
-        pointRadius: 1,
-        pointHitRadius: 10,
+        // borderCapStyle: 'butt',
+        // borderDash: [],
+        // borderDashOffset: 0.0,
+        // borderJoinStyle: 'miter',
+        // pointBorderColor: 'black',
+        // pointBackgroundColor: 'black',
+        // pointBorderWidth: 1,
+        // pointHoverRadius: 5,
+        // pointHoverBackgroundColor: 'black',
+        // pointHoverBorderColor: 'black',
+        // pointHoverBorderWidth: 2,
+        // pointRadius: 1,
+        // pointHitRadius: 10,
         data: dats
       }
     ]
   }
 
+  const options = {
+    scales: {
+      yAxes: [
+        {
+          scaleLabel: {
+            display: true,
+            labelString: '# tweets',
+            fontColor: 'white'
+          },
+          ticks: {
+            fontColor: 'white'
+          }
+        }
+      ],
+      xAxes: [
+        {
+          scaleLabel: {
+            display: true,
+            labelString: 'days since today',
+            fontColor: 'white'
+          },
+          ticks: {
+            fontColor: 'white'
+          }
+        }
+      ]
+    }
+  }
+
   return (
     <div>
       <h2>Tweets over Time</h2>
-      <Line data={data} />
+      <Line data={data} options={options} />
     </div>
   )
 }
