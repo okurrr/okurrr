@@ -164,7 +164,7 @@ const words = [
 ]
 
 async function seed() {
-  await db.sync({force: true})
+  await db.sync({force: false})
   console.log('db synced!')
 
   await Promise.all(words.map(word => Word.create(word)))
