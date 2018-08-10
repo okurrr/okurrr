@@ -4,12 +4,21 @@ module.exports = router
 
 router.get('/', async (req, res, next) => {
   try {
-    const words = await Word.findAll({order: [['name']]})
+    const words = await Word.findAll()
     res.json(words)
   } catch (err) {
     next(err)
   }
 })
+
+// router.get('/', async (req, res, next) => {
+//   try {
+//     const words = await Word.findAll({order: [['name']]})
+//     res.json(words)
+//   } catch (err) {
+//     next(err)
+//   }
+// })
 
 router.get('/:word', async (req, res, next) => {
   try {
