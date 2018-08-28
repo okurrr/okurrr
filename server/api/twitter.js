@@ -2,7 +2,14 @@ const router = require('express').Router()
 const Twit = require('twit')
 const config = require('./twitterConfig')
 
-const T = new Twit(config)
+if (process.env.NODE_ENV !== 'production') require('../../secrets')
+
+const T = new Twit({
+  consumer_key: process.env.KEY,
+  consumer_secret: process.env.SECRET,
+  access_token: process.env.ACCESSTOKEN,
+  access_token_secret: process.env.ACCESSTOKENSECRET
+})
 
 // try {
 //   var SpeechRecognition =
