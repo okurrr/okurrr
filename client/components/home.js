@@ -53,9 +53,7 @@ class Home extends Component {
               justifyContent: 'center',
               color: 'white'
             }}
-          >
-            {/* dictionary x culture x data */}
-          </div>
+          />
         </div>
       </div>
     )

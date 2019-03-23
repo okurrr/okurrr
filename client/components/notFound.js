@@ -20,7 +20,7 @@ export const NotFound = () => {
               see all
             </Link>
           </div>
-          <div>or add here:</div>
+          {/* <div>or add here:</div>
           <div>
             <Link
               className="notFoundLink"
@@ -33,7 +33,7 @@ export const NotFound = () => {
             >
               define
             </Link>
-          </div>
+          </div> */}
         </span>
       </div>
     </div>

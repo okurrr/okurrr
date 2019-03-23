@@ -7,6 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
+    "heroku-postbuild": "echo Skip build on Heroku",
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "deploy": "script/deploy",
@@ -18,7 +19,6 @@
     "postinstall": "touch secrets.js",
     "seed": "node script/seed.js",
     "start": "node server",
-    "heroku-postbuild": "node server",
     "start-dev": "NODE_ENV='development' npm run build-client-watch & npm run start-server",
     "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
     "test": "NODE_ENV='test' mocha  \"./client/**/*.spec.js\"  --require @babel/polyfill --require @babel/register"
@@ -46,7 +46,6 @@
     "genius-api": "^0.4.1",
     "history": "^4.6.3",
     "morgan": "^1.8.1",
-    "natives": "^1.1.6",
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",
     "pg": "^6.1.2",

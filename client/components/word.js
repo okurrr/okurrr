@@ -56,9 +56,6 @@ class Word extends Component {
   }
 }
 
-/**
- * CONTAINER
- */
 const mapStateToProps = state => ({
   tweets: state.twitter,
   list: state.list,

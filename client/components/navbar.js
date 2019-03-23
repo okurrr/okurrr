@@ -24,9 +24,9 @@ class Navbar extends Component {
               <Link className="item midsize" to="/list">
                 see all
               </Link>
-              <Link className="item midsize" to="/add">
+              {/* <Link className="item midsize" to="/add">
                 define a word
-              </Link>
+              </Link> */}
             </div>
           </nav>
           <hr />

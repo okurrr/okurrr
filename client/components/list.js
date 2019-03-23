@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
-// import Word from './word'
 import {fetchWords} from '../store/list'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import Emoji from 'react-emoji-render'
 
 class List extends Component {
   componentDidMount() {
@@ -24,13 +22,8 @@ class List extends Component {
                   fontWeight: 'bold'
                 }}
               >
-                <Link
-                  to={`/list/${word.name}`}
-                  // style={{color: '#FFFFFF'}}
-                  className="listWord"
-                >
+                <Link to={`/list/${word.name}`} className="listWord">
                   {word.name}
-                  {/* <Emoji text={this.props.getEmoji(word)} /> */}
                 </Link>
               </span>
             )
@@ -46,47 +39,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  getWords: () => dispatch(fetchWords()),
-  getEmoji: word => {
-    let emojii = ''
-    if (word.name === 'fire') {
-      emojii = '🔥'
-    }
-    if (word.name === 'lit') {
-      emojii = '🔥'
-    }
-    if (word.name === 'goat') {
-      emojii = '🐐'
-    }
-    if (word.name === 'bless up') {
-      emojii = '🙏'
-    }
-    if (word.name === 'bye felicia') {
-      emojii = '👋'
-    }
-    if (word.name === 'fetch') {
-      emojii = '🐶'
-    }
-    if (word.name === 'thicc') {
-      emojii = '🍑'
-    }
-    if (word.name === 'one hunnid') {
-      emojii = '💯'
-    }
-    if (word.name === 'clapback') {
-      emojii = '👏'
-    }
-    if (word.name === 'hot minute') {
-      emojii = '🕒'
-    }
-    if (word.name === 'yass') {
-      emojii = '🙌'
-    }
-    if (word.name === 'thirst trap') {
-      emojii = '🤤'
-    }
-    return emojii
-  }
+  getWords: () => dispatch(fetchWords())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(List)
