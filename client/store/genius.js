@@ -5,7 +5,7 @@ const songsArray = []
 const GET_SONGS = 'GET_SONGS'
 
 const getSongs = songs => ({type: GET_SONGS, songs})
-
+console.log('hi')
 export const fetchSongs = word => async dispatch => {
   try {
     const res = await axios.get(`/api/lyrics/${word}`)

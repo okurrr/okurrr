@@ -153,11 +153,12 @@ h2.centeredtop {
   overflow-y: scroll;
   /* overflow: hidden;
   position: relative; */
+  height: 100vh;
 }
 
 .parent{
   border-right: thin black solid;
-  height: 100vh;
+  /* height: 100vh; */
   overflow: hidden;
 }
 
