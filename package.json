@@ -46,6 +46,7 @@
     "genius-api": "^0.4.1",
     "history": "^4.6.3",
     "morgan": "^1.8.1",
+    "natives": "^1.1.6",
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",
     "pg": "^6.1.2",
